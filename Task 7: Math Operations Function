@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+    function calculate(a, b, op) {
+        a = parseFloat(a);
+        b = parseFloat(b);
+        switch(op) {
+            case '+': return a + b;
+            case '-': return a - b;
+            case '*': return a * b;
+            case '/': return a / b;
+            default: return "Invalid operation";
+        }
+    }
+
+    let x = prompt("Enter first number:");
+    let y = prompt("Enter second number:");
+    let operation = prompt("Enter operation (+, -, *, /):");
+    alert("Result: " + calculate(x, y, operation));
+</script>
+</body>
+</html>
+
+console(https://extraordinary-honesty-easier.w3spaces.com/operationfunctions.html)
