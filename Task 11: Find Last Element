@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+    let elements = prompt("Enter array elements separated by commas:").split(',');
+    alert("Last element: " + elements[elements.length - 1]);
+</script>
+</body>
+</html>
+
+console(https://extraordinary-honesty-easier.w3spaces.com/lastelement.html)
