@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+    let text = prompt("Enter text:").toLowerCase();
+    let vowels = text.match(/[aeiou]/g);
+    alert("Number of vowels: " + (vowels ? vowels.length : 0));
+</script>
+</body>
+</html>
