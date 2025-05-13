@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+    let word = prompt("Enter a word:").toLowerCase();
+    let repeats = [];
+    
+    for (let i = 0; i < word.length; i++) {
+        if (word.indexOf(word[i]) !== word.lastIndexOf(word[i])) {
+            if (!repeats.includes(word[i])) {
+                repeats.push(word[i]);
+            }
+        }
+    }
+    
+    alert("Repeated characters: " + (repeats.length ? repeats.join(", ") : "None"));
+</script>
+</body>
+</html>
+
+console()
