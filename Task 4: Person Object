@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+    let person = {
+        name: prompt("Enter name:"),
+        age: parseInt(prompt("Enter age:")),
+        gender: prompt("Enter gender:")
+    };
+    alert(`Name: ${person.name}\nAge: ${person.age}\nGender: ${person.gender}`);
+</script>
+</body>
+</html>
+
+console(https://extraordinary-honesty-easier.w3spaces.com/personobject.html)
