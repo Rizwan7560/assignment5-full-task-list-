@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+    let sentence = prompt("Enter a sentence:");
+    let words = sentence.split(' ');
+    let longest = words[0];
+    
+    for (let word of words) {
+        if (word.length > longest.length) {
+            longest = word;
+        }
+    }
+    
+    alert("Longest word: " + longest);
+</script>
+</body>
+</html>
