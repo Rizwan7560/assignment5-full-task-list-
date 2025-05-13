@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+    let str = prompt("Enter a string:");
+    let words = str.trim() === "" ? 0 : str.trim().split(/\s+/).length;
+    let chars = str.length;
+    let spaces = (str.match(/ /g) || []).length;
+    let special = str.match(/[^a-zA-Z0-9\s]/g) || [];
+    
+    alert(`Words: ${words}\nCharacters: ${chars}\nSpaces: ${spaces}\nSpecial symbols: ${special.length}`);
+</script>
+</body>
+</html>
