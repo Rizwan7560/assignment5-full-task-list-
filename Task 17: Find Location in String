@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+    let mainStr = prompt("Enter main string:");
+    let subStr = prompt("Enter substring to find:");
+    let position = mainStr.indexOf(subStr);
+    alert(subStr + " found at position: " + (position !== -1 ? position : "Not found"));
+</script>
+</body>
+</html>
