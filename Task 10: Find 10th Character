@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+    let input = prompt("Enter a string or array elements separated by commas:");
+    let arr = input.split(',');
+    if (arr.length >= 10) {
+        alert("10th element: " + arr[9]);
+    } else {
+        alert("Array too short!");
+    }
+</script>
+</body>
+</html>
+
+console(https://extraordinary-honesty-easier.w3spaces.com/10thcharacter.html)
