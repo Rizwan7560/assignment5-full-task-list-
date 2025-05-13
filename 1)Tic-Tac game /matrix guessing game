@@ -1,0 +1,196 @@
+1. Tic-Tac-Toe (X and 0) Game console(https://extraordinary-honesty-easier.w3spaces.com/tictakgame.html)
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tic Tac Toe</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .board { 
+            display: grid; 
+            grid-template-columns: repeat(3, 100px);
+            grid-gap: 5px; 
+            margin: 20px auto;
+            width: 310px;
+        }
+        .cell {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #333;
+            font-size: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        #status { margin: 20px; font-size: 24px; }
+    </style>
+</head>
+<body>
+    <h1>Tic Tac Toe</h1>
+    <div id="status">Player X's turn</div>
+    <div class="board" id="board"></div>
+    <button onclick="resetGame()">Reset Game</button>
+
+    <script>
+        let currentPlayer = 'X';
+        let board = ['', '', '', '', '', '', '', '', ''];
+        const boardElement = document.getElementById('board');
+        const statusElement = document.getElementById('status');
+
+        // Initialize the board
+        function createBoard() {
+            boardElement.innerHTML = '';
+            for (let i = 0; i < 9; i++) {
+                const cell = document.createElement('div');
+                cell.className = 'cell';
+                cell.setAttribute('data-index', i);
+                cell.addEventListener('click', handleCellClick);
+                boardElement.appendChild(cell);
+            }
+        }
+
+        // Handle cell clicks
+        function handleCellClick(e) {
+            const index = e.target.getAttribute('data-index');
+            
+            if (board[index] !== '' || checkWinner()) return;
+            
+            board[index] = currentPlayer;
+            e.target.textContent = currentPlayer;
+            
+            if (checkWinner()) {
+                statusElement.textContent = `Player ${currentPlayer} wins!`;
+                return;
+            }
+            
+            if (board.every(cell => cell !== '')) {
+                statusElement.textContent = "It's a draw!";
+                return;
+            }
+            
+            currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+            statusElement.textContent = `Player ${currentPlayer}'s turn`;
+        }
+
+        // Check for winner
+        function checkWinner() {
+            const winPatterns = [
+                [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows
+                [0, 3, 6], [1, 4, 7], [2, 5, 8], // columns
+                [0, 4, 8], [2, 4, 6]             // diagonals
+            ];
+
+            return winPatterns.some(pattern => {
+                const [a, b, c] = pattern;
+                return board[a] && board[a] === board[b] && board[a] === board[c];
+            });
+        }
+
+        // Reset the game
+        function resetGame() {
+            board = ['', '', '', '', '', '', '', '', ''];
+            currentPlayer = 'X';
+            statusElement.textContent = "Player X's turn";
+            createBoard();
+        }
+
+        // Initialize the game
+        createBoard();
+    </script>
+</body>
+</html>
+
+
+2. Matrix Guessing Game console(https://extraordinary-honesty-easier.w3spaces.com/matrixguessingGAME.html)
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Matrix Guessing Game</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        table { margin: 20px auto; border-collapse: collapse; }
+        td { 
+            width: 50px; 
+            height: 50px; 
+            border: 1px solid #333; 
+            text-align: center;
+            font-size: 20px;
+        }
+        .hidden { background: #333; color: #333; }
+        .revealed { background: #fff; }
+    </style>
+</head>
+<body>
+    <h1>Matrix Guessing Game</h1>
+    <div>
+        <label for="size">Select matrix size:</label>
+        <select id="size">
+            <option value="3">3x3</option>
+            <option value="4">4x4</option>
+            <option value="5">5x5</option>
+        </select>
+        <button onclick="startGame()">Start Game</button>
+    </div>
+    <div id="gameArea"></div>
+    <div id="message"></div>
+
+    <script>
+        let matrix = [];
+        let hiddenMatrix = [];
+        let size = 3;
+
+        function startGame() {
+            size = parseInt(document.getElementById('size').value);
+            matrix = [];
+            hiddenMatrix = [];
+            
+            // Create random matrix
+            for (let i = 0; i < size; i++) {
+                let row = [];
+                for (let j = 0; j < size; j++) {
+                    row.push(Math.floor(Math.random() * 5) + 1);
+                }
+                matrix.push(row);
+                hiddenMatrix.push(new Array(size).fill(true));
+            }
+            
+            renderGame();
+        }
+
+        function renderGame() {
+            const gameArea = document.getElementById('gameArea');
+            let html = '<table>';
+            
+            for (let i = 0; i < size; i++) {
+                html += '<tr>';
+                for (let j = 0; j < size; j++) {
+                    const cellClass = hiddenMatrix[i][j] ? 'hidden' : 'revealed';
+                    html += `<td class="${cellClass}" onclick="revealCell(${i}, ${j})">`;
+                    html += hiddenMatrix[i][j] ? '?' : matrix[i][j];
+                    html += '</td>';
+                }
+                html += '</tr>';
+            }
+            
+            html += '</table>';
+            gameArea.innerHTML = html;
+            document.getElementById('message').textContent = 'Click on cells to reveal numbers';
+        }
+
+        function revealCell(row, col) {
+            if (!hiddenMatrix[row][col]) return;
+            
+            hiddenMatrix[row][col] = false;
+            renderGame();
+            
+            // Check if all cells are revealed
+            if (hiddenMatrix.flat().every(cell => !cell)) {
+                document.getElementById('message').textContent = 'Congratulations! You revealed all numbers!';
+            }
+        }
+    </script>
+</body>
+</html>
+
