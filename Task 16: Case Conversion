@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+    let text = prompt("Enter text:");
+    let converted = text.split('').map(function(c) {
+        return c === c.toUpperCase() ? c.toLowerCase() : c.toUpperCase();
+    }).join('');
+    alert("Converted: " + converted);
+</script>
+</body>
+</html>
