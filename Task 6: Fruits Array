@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+    let fruits = ["Apple", "Banana", "Orange", "Mango"];
+    alert("Third fruit: " + fruits[2]);
+</script>
+</body>
+</html>
+
+
+Console(https://extraordinary-honesty-easier.w3spaces.com/fruitsArray.html)
