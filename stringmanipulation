@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+    let str = prompt("Enter a string:");
+    let reversed = str.split('').reverse().join('');
+    let chars = str[2] + str[3];
+    alert(`Reversed: ${reversed}\n3rd & 4th chars: ${chars}`);
+</script>
+</body>
+</html>
+
+console(https://extraordinary-honesty-easier.w3spaces.com/stringmanipulation.html)
