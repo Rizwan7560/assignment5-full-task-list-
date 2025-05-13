@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+    let num1 = prompt("Enter first number:");
+    let num2 = prompt("Enter second number:");
+    let op = prompt("Enter operation (+, -, *, /):");
+
+    if (!isNaN(num1) && !isNaN(num2)) {
+        num1 = parseFloat(num1);
+        num2 = parseFloat(num2);
+        let result;
+        switch(op) {
+            case '+': result = num1 + num2; break;
+            case '-': result = num1 - num2; break;
+            case '*': result = num1 * num2; break;
+            case '/': result = num1 / num2; break;
+            default: result = "Invalid operation";
+        }
+        alert("Result: " + result);
+    } else {
+        if (op === '+') {
+            alert("Concatenated: " + num1 + num2);
+        } else {
+            alert("Only addition supported for strings");
+        }
+    }
+</script>
+</body>
+</html>
+
+console(https://extraordinary-honesty-easier.w3spaces.com/arithmeticoperations.html)
