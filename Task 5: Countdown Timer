@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+<button onclick="startTimer()">Start</button>
+<button onclick="pauseTimer()">Pause</button>
+<button onclick="resetTimer()">Reset</button>
+<p id="countdown">10</p>
+
+<script>
+    let time = 10;
+    let timer;
+
+    function startTimer() {
+        timer = setInterval(function() {
+            time--;
+            document.getElementById("countdown").textContent = time;
+            if (time <= 0) clearInterval(timer);
+        }, 1000);
+    }
+
+    function pauseTimer() {
+        clearInterval(timer);
+    }
+
+    function resetTimer() {
+        clearInterval(timer);
+        time = 10;
+        document.getElementById("countdown").textContent = time;
+    }
+</script>
+</body>
+</html>
+
+
+CONSOLE(https://extraordinary-honesty-easier.w3spaces.com/countdownTIMER.html)
