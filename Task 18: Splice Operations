@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+    let colors = ["Red", "Green", "Blue", "Yellow"];
+    
+    // Delete
+    colors.splice(1, 1);
+    
+    // Insert
+    colors.splice(1, 0, "Purple");
+    
+    // Replace
+    colors.splice(2, 1, "Orange");
+    
+    alert("Modified array: " + colors.join(", "));
+</script>
+</body>
+</html>
