@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+    let phone;
+    do {
+        phone = prompt("Enter 10-digit phone number:");
+    } while (phone.length !== 10 || isNaN(phone));
+    alert("Valid phone number: " + phone);
+</script>
+</body>
+</html>
+
+console(https://extraordinary-honesty-easier.w3spaces.com/10digit.html)
